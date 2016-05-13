@@ -1,0 +1,118 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" css="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" css="">
+    <meta name="viewport" css="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+
+    <style>
+        body {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.js"><\/script>')</script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!--[if lt IE 8]>
+			<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+		<![endif]-->
+    <nav class="navbar navbar-inverse  navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="videoHLS.html">Visor AvanzadoHLS</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="principal.html">Inicio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container page-wrap" id="contenedorGeneral">
+        <div class="videoContainer embed-responsive embed-responsive-16by9">
+            <video id="miVideo" preload="auto" controls>
+                <source src="video/video.m3u8">
+                Your browser does not support HTML5 video.
+            </video>
+
+            <div class="control">
+                <div class="topControl">
+                    <div class="progress">
+                        <span class="bufferBar"></span>
+                        <span class="timeBar"></span>
+                    </div>
+                    <div class="time">
+                        <span class="current"></span>/ 
+							<span class="duration"></span>
+                    </div>
+                </div>
+
+                <div class="btmControl">
+                    <div class="btnPlay btn" title="Play video"></div>
+                    <div class="btnStop btn" title="Stop video"></div>
+                    <div class="btnx1 btn text selected" title="Velocidad normal">x1</div>
+                    <div class="btnx3 btn text" title="Velocidad x3">x3</div>
+                    <div class="btnx5 btn text" title="Velocidad x5">x5</div>
+                    <div class="btnFS btn" title="Pantalla Completa"></div>
+                    <div class="btnLight lighton btn" title="Apaga Luces"></div>
+                    <div class="volume" title="Volumen">
+                        <span class="volumeBar"></span>
+                    </div>
+                    <div class="sound sound2 btn" title="Silenciar"></div>
+                </div>
+
+            </div>
+            <div class="loading"></div>
+        </div>
+        <div class="container wrapperAli" id="botones">
+            <button type="button" id="btnOriginal" class="btn btn-default canvasBtn">Original</button>
+            <button type="button" id="btnBlanco" class="btn btn-default canvasBtn">B/N</button>
+            <button type="button" id="btnSipi" class="btn btn-default canvasBtn">Sepia</button>
+            <button type="button" id="btnInvertido" class="btn btn-default canvasBtn">Invertir</button>
+            <button type="button" id="btn2Canales" class="btn btn-default canvasBtn">2 Canales</button>
+        </div>
+        <div class="canvasContainer embed-responsive embed-responsive-16by9">
+            <canvas id="canvasMod"></canvas>
+        </div>
+    </div>
+
+    <div class="container">
+        <p id="descripcion"></p>
+    </div>
+    <!-- /container -->
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/canvas.js"></script>
+
+    <!--<script type="text/javascript" src="js/jquery.equalizer.js"></script> -->
+
+</body>
+</html>
+
